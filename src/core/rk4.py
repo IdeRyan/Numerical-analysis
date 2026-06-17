@@ -1,15 +1,15 @@
-class RK:
-    def __init__(self, f, t0, tf, N, alpha):
+class RK4:
+    def __init__(self, f, t0, tf, N, y0):
         self.f = f
         self.t0 = t0
         self.tf = tf
         self.N = N
-        self.alpha = alpha
+        self.y0 = y0
 
     def solve(self):
         h = (self.tf - self.t0) / self.N
         t = self.t0
-        w = self.alpha
+        w = self.y0
 
         results = [(t,w)]
         for i in range(self.N):
