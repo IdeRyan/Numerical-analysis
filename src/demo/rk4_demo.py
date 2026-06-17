@@ -1,5 +1,5 @@
-from src.core.runge_kutta import RK
-from src.problems.example_1 import f
+from src.core.rk4 import RK4
+from src.problems.example_2 import f
 
 def print_results(results):
     for i, (t, w) in enumerate(results):
@@ -7,7 +7,7 @@ def print_results(results):
 
 
 if __name__ == "__main__":
-    solver = RK(f, 0, 2, 10, 0.5)
+    solver = RK4(f, 0, 1, 15, 0.5)
     results = solver.solve()
 
     print_results(results)
